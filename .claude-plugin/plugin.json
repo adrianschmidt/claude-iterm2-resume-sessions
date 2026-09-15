@@ -1,0 +1,14 @@
+{
+  "name": "iterm2-resume-sessions",
+  "displayName": "iTerm2 Resume Sessions",
+  "version": "1.0.0",
+  "description": "Bring every Claude Code session back after a reboot, each in the iTerm2 pane it was running in.",
+  "author": {
+    "name": "Adrian Schmidt",
+    "url": "https://github.com/adrianschmidt"
+  },
+  "homepage": "https://github.com/adrianschmidt/claude-iterm2-resume-sessions",
+  "repository": "https://github.com/adrianschmidt/claude-iterm2-resume-sessions",
+  "license": "MIT",
+  "keywords": ["iterm2", "sessions", "resume", "reboot", "macos"]
+}

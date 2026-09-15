@@ -1,0 +1,18 @@
+{
+  "name": "claude-iterm2-resume-sessions",
+  "owner": {
+    "name": "Adrian Schmidt",
+    "url": "https://github.com/adrianschmidt"
+  },
+  "metadata": {
+    "description": "Resume Claude Code sessions in their iTerm2 panes after a reboot"
+  },
+  "plugins": [
+    {
+      "name": "iterm2-resume-sessions",
+      "description": "Bring every Claude Code session back after a reboot, each in the iTerm2 pane it was running in.",
+      "source": "./",
+      "version": "1.0.0"
+    }
+  ]
+}
