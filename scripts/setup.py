@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Install or remove the login-time resume step.
 
-Puts `claude-resume-sessions` on the PATH and registers a LaunchAgent that
+Puts `claude-iterm2-resume-sessions` on the PATH and registers a LaunchAgent that
 runs it shortly after login. Safe to re-run.
 
 Usage: setup.py [--uninstall]
@@ -14,8 +14,8 @@ LABEL = "io.github.adrianschmidt.claude-iterm2-resume-sessions"
 PLIST = os.path.expanduser("~/Library/LaunchAgents/%s.plist" % LABEL)
 LOG = os.path.expanduser("~/Library/Logs/claude-iterm2-resume-sessions.log")
 BIN_DIR = os.path.expanduser("~/.local/bin")
-COMMAND_LINK = os.path.join(BIN_DIR, "claude-resume-sessions")
-SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "claude-resume-sessions")
+COMMAND_LINK = os.path.join(BIN_DIR, "claude-iterm2-resume-sessions")
+SCRIPT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "claude-iterm2-resume-sessions")
 
 PLIST_TEMPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -66,7 +66,7 @@ def install():
     os.symlink(SCRIPT, COMMAND_LINK)
     print("linked %s -> %s" % (COMMAND_LINK, SCRIPT))
     if BIN_DIR not in os.environ.get("PATH", "").split(os.pathsep):
-        print("note: %s is not on your PATH; add it to run claude-resume-sessions by hand" % BIN_DIR)
+        print("note: %s is not on your PATH; add it to run claude-iterm2-resume-sessions by hand" % BIN_DIR)
 
     os.makedirs(os.path.dirname(PLIST), exist_ok=True)
     with open(PLIST, "w") as f:

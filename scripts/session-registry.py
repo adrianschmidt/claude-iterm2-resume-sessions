@@ -14,7 +14,7 @@ import sys
 import time
 
 REGISTRY_DIR = os.path.expanduser("~/.claude/resume-registry")
-COMMAND_LINK = os.path.expanduser("~/.local/bin/claude-resume-sessions")
+COMMAND_LINK = os.path.expanduser("~/.local/bin/claude-iterm2-resume-sessions")
 PLUGIN_CACHE = os.path.expanduser("~/.claude/plugins/")
 DELIBERATE_END_REASONS = {"clear", "logout", "prompt_input_exit", "resume"}
 
@@ -26,7 +26,7 @@ def refresh_command_link():
     if not root or not os.path.islink(COMMAND_LINK):
         return
     current = os.readlink(COMMAND_LINK)
-    wanted = os.path.join(root, "scripts", "claude-resume-sessions")
+    wanted = os.path.join(root, "scripts", "claude-iterm2-resume-sessions")
     if current == wanted or not current.startswith(PLUGIN_CACHE):
         return
     tmp = COMMAND_LINK + ".tmp"

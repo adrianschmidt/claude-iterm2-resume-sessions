@@ -16,7 +16,7 @@ Run and show the user the output:
 /usr/bin/python3 "${CLAUDE_PLUGIN_ROOT}/scripts/setup.py"
 ```
 
-It links `~/.local/bin/claude-resume-sessions` to the plugin's script and loads
+It links `~/.local/bin/claude-iterm2-resume-sessions` to the plugin's script and loads
 a LaunchAgent that runs it 20 seconds after login. The script's final lines list
 the iTerm2 and macOS settings that must be on for windows to be restored;
 repeat them to the user, since without restored windows every session falls
@@ -35,11 +35,11 @@ uninstalled with `/plugin`.
 
 ## Troubleshooting
 
-- `claude-resume-sessions list` shows every recorded session and why it would
+- `claude-iterm2-resume-sessions list` shows every recorded session and why it would
   or would not be resumed.
-- `claude-resume-sessions resume --dry-run` shows what a login would do,
+- `claude-iterm2-resume-sessions resume --dry-run` shows what a login would do,
   including which sessions have a live pane to return to.
 - `~/Library/Logs/claude-iterm2-resume-sessions.log` holds the output of the
   last login run.
 - Sessions started before the plugin was enabled have no record; run
-  `claude-resume-sessions import-live` once to register the ones running now.
+  `claude-iterm2-resume-sessions import-live` once to register the ones running now.

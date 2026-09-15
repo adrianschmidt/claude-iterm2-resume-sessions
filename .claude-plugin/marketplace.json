@@ -12,7 +12,7 @@
       "name": "iterm2-resume-sessions",
       "description": "Bring every Claude Code session back after a reboot, each in the iTerm2 pane it was running in.",
       "source": "./",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

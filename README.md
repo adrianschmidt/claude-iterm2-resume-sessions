@@ -21,14 +21,14 @@ In Claude Code:
 ```
 
 The first two commands enable the hooks that record sessions. The third
-installs the login step: a symlink at `~/.local/bin/claude-resume-sessions`
+installs the login step: a symlink at `~/.local/bin/claude-iterm2-resume-sessions`
 and a LaunchAgent that runs it 20 seconds after login.
 
 Sessions already running when you install have no record yet. Register them
 once with:
 
 ```
-claude-resume-sessions import-live
+claude-iterm2-resume-sessions import-live
 ```
 
 ## Required settings
@@ -56,7 +56,7 @@ Allow it.
 - A `SessionEnd` hook deletes the file on a deliberate exit (`/exit`,
   `/clear`, logout, switching sessions) and otherwise marks how the session
   ended. A reboot ends sessions with reason `other`, so those files survive.
-- At login, `claude-resume-sessions resume` waits for iTerm2 to have windows,
+- At login, `claude-iterm2-resume-sessions resume` waits for iTerm2 to have windows,
   then for each surviving record checks that its pane is sitting at a shell
   prompt and types the resume command into it. Panes that are gone or busy
   get a tab in a new window instead.
@@ -71,10 +71,10 @@ days.
 ## Commands
 
 ```
-claude-resume-sessions list               # every record and why it would or wouldn't resume
-claude-resume-sessions resume --dry-run   # what a login would do
-claude-resume-sessions import-live        # register sessions running right now
-claude-resume-sessions prune              # drop records that can never resume
+claude-iterm2-resume-sessions list               # every record and why it would or wouldn't resume
+claude-iterm2-resume-sessions resume --dry-run   # what a login would do
+claude-iterm2-resume-sessions import-live        # register sessions running right now
+claude-iterm2-resume-sessions prune              # drop records that can never resume
 ```
 
 The last login run's output is in
