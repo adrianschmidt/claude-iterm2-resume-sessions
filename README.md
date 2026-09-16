@@ -80,21 +80,6 @@ claude-iterm2-resume-sessions prune              # drop records that can never r
 The last login run's output is in
 `~/Library/Logs/claude-iterm2-resume-sessions.log`.
 
-## Seeing the session id on screen
-
-When a session is killed by a reboot, Claude Code never gets to print its
-"Resume this session with" hint, and anything a hook prints at that point
-arrives after iTerm2 has already saved the pane's contents. The one thing that
-does survive in the restored scrollback is the status line, so putting the
-resume command there makes unnamed sessions easy to find by hand.
-
-With [ccstatusline](https://github.com/sirmalloc/ccstatusline), add a
-Custom Command widget with this command:
-
-```
-jq -r '"claude --resume " + .session_id'
-```
-
 ## Uninstall
 
 ```
